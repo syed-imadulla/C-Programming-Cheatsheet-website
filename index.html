@@ -34,7 +34,7 @@ int main() {
             Initialization: <br><code>char grade = 'A';</code>
         </div>
 
-        <div class="note note-green">
+        <div class="note note-purple">
             <h3>printf &amp; scanf</h3>
             <ul>
                 <li>
@@ -66,17 +66,17 @@ int main() {
             <h3>Operators</h3>
             <ul>
                 <li><b>Arithmetic:</b> <code>+ - * / %</code></li>
-                <li><b>Relational:</b> <code>== != > < >= <=</code></li>
+                <li><b>Relational:</b> <code>== != &gt; &lt; &gt;= &lt;=</code></li>
                 <li><b>Logical:</b> <code>&& || !</code></li>
-                <li><b>Bitwise:</b> <code>& | ^ ~ << >></code></li>
+                <li><b>Bitwise:</b> <code>& | ^ ~ &lt;&lt; &gt;&gt;</code></li>
             </ul>
         </div>
 
         <div class="note note-orange">
             <h3>Type Conversion</h3>
-            <b>Implicit:</b>Low —> High, no loss of data.<br><code>int + float = float;</code><br>
+            <b>Implicit:</b>Low —&gt; High, no loss of data.<br><code>int + float = float;</code><br>
             
-            <b>Explicit (Casting):</b>High —> Low, loss of data.<br><code>int a = (int)10.5;</code>
+            <b>Explicit (Casting):</b>High —&gt; Low, loss of data.<br><code>int a = (int)10.5;</code>
         </div>
 
         <div class="note note-yellow">
@@ -84,7 +84,7 @@ int main() {
             <ul>
                 <li><b>Conditional:</b><br><code>if, else if, else</code></li>
                 <li><code>switch-case-break</code></li>
-                <li><b>Unconditional:</b><br><code>break, continue, return</code></li>
+                <li><b>Unconditional:</b><br><code>break, continue, return, goto</code></li>
                 <li><b>Loops:</b><br><code>for, while, do-while</code></li>
             </ul>
         </div>
@@ -95,7 +95,7 @@ int main() {
             Call: <br><code>int sum = add(5, 3);</code><br>
             Supports call by value & call by reference.
         </div>
-        <div class="note note-orange">
+        <div class="note note-pink">
             <h3>Types of Functions</h3>
             <ul>
                 <li>1. No args & no return </li>
@@ -129,13 +129,22 @@ int main() {
 
         <div class="note note-orange">
             <h3>Structures</h3>
-            Collection of different data types.<br>
+            Collection of different data types. Each member has its own memory location.
             <code>struct Student {
-  int id;
-  char name[20];
+    int id;
+    char name[50];
+};
+struct Student s1;
+s1.id = 101;</code>
+</div>
+        <div class="note note-green">
+            <h3>Unions</h3>
+            Collection of different data types in the same memory location. Only one member can hold a value at any given time.
+            <code>union Data {
+    int i;
+    char str[20];
 };</code>
         </div>
-        
         <div class="note note-yellow">
             <h3>Typedef</h3>
             Creates an alias for a data type.<br>
