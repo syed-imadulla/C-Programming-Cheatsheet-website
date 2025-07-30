@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Roboto:wght@400;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Kalam&family=Roboto:wght@400;700&display=swap');
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Roboto', sans-serif;           
+            background-color: #ffffff;
+            background-image: radial-gradient(#a9a9a9 1px, transparent 1px);
+            background-size: 20px 20px;
             margin: 0;
             padding: 15px;
         }
@@ -66,3 +68,4 @@
             .notes-container { gap: 15px; }
             .note { box-shadow: 2px 2px 5px #ccc; min-height: 230px; }
         }
+        
