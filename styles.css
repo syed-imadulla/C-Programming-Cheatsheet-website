@@ -1,7 +1,8 @@
  @import url('https://fonts.googleapis.com/css2?family=Kalam&family=Roboto:wght@400;700&display=swap');
         body {
             font-family: 'Roboto', sans-serif;           
-            background: #ffffff radial-gradient(#a9a9a9 1px, transparent 1px);
+            background-color: #ffffff;
+            background-image: radial-gradient(#a9a9a9 1px, transparent 1px);
             background-size: 20px 20px;
             margin: 0;
             padding: 15px;
@@ -62,9 +63,57 @@
         .note-purple { background-color: #e6b3ff; transform: rotate(3deg); }
         .note-orange { background-color: #ffc4b3; transform: rotate(-3deg); }
         
-        @media print {
+        /* @media print {
             body { background-color: #fff; }
             .notes-container { gap: 15px; }
             .note { box-shadow: 2px 2px 5px #ccc; min-height: 230px; }
-        }
+        } */
         
+        /* --- General Print Styles --- */
+        @media print {
+          body {
+            background: none;
+            /* Helps force the browser to print background colors */
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+          }
+          h1 {
+            font-size: 20pt;
+            text-align: center;
+            margin-bottom: 10px;
+          }
+          .notes-container {
+            display: grid; /* Use grid for precise layouts */
+          }
+          .note {
+            page-break-inside: avoid; /* Tries to keep notes on one page */
+            box-shadow: none;         /* Removes shadows */
+            transform: none;          /* Removes rotation */
+            border: 1px solid rgba(0,0,0,0.2);
+            width: auto;
+            min-height: initial;      /* Lets content define height */
+          }
+          .note:hover {
+            transform: none;
+          }
+        }
+
+        /* --- Portrait Layout: 3 Columns --- */
+        @media print and (orientation: portrait) {
+          body { font-size: 9pt; }
+          .notes-container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+          }
+          .note { padding: 8px; }
+        }
+
+        /* --- Landscape Layout: 4 Columns --- */
+        @media print and (orientation: landscape) {
+          body { font-size: 9pt; } /* Larger font for wider columns */
+          .notes-container {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+          }
+          .note { padding: 8px; }
+        }        
