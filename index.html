@@ -124,10 +124,18 @@ int main() {
             Array of characters ending with  `\0`.<br>
             <code>char name[] = "Imad";</code><br>
             use string.h for string functions like <code>strlen, strcpy, strcat.</code><br>
-           <b>Note:</b> No '&' in 'scanf '.
+            <b>Note:</b> No '&' in 'scanf '.
         </div>
-
         <div class="note note-orange">
+            <h3>String I/O Functions</h3>
+            <ul>
+                <li><b>gets:</b> Reads a line (Unsafe!)</li>
+                <li><b>puts:</b> Writes a string + `\n`</li>
+                <li><b>fgets:</b> Safely reads a line from a stream.</li>
+                <li><b>fputs:</b> Writes a string to a stream.</li>
+            </ul>
+        </div>
+        <div class="note note-yellow">
             <h3>Structures</h3>
             Collection of different data types. Each member has its own memory location.
             <code>struct Student {
@@ -137,7 +145,7 @@ int main() {
 struct Student s1;
 s1.id = 101;</code>
 </div>
-        <div class="note note-green">
+        <div class="note note-orange">
             <h3>Unions</h3>
             Collection of different data types in the same memory location. Only one member can hold a value at any given time.
             <code>union Data {
@@ -159,7 +167,8 @@ Student s1;</code>
             <h3>Enum</h3>
             Assigns names to integer constants.<br>
             <code>enum Day {SUN, MON};
-enum Day d = MON;</code>
+enum Day d = MON;</code><br>
+            <b>Note:</b> Sturcture, Union and Enum are user-defined data types.
         </div>
         
         <div class="note note-blue">
@@ -172,7 +181,17 @@ fscanf(fp, "%d", &var);
 
 fclose(fp);</code>
         </div>
-
+        <div class="note note-purple">
+            <h3>File Modes</h3>
+            <ul>
+                <li><b>"r":</b> Read Only (must exist)</li>
+                <li><b>"w":</b> Write Only (overwrites)</li>
+                <li><b>"a":</b> Append Only (creates)</li>
+                <li><b>"r+":</b> Read & Write</li>
+                <li><b>"w+":</b> Write & Read (overwrites)</li>
+                <li><b>"a+":</b> Append & Read</li>
+            </ul>
+        </div>
         <div class="note note-pink">
             <h3>Recursion</h3>
             A function that calls itself.<br>
